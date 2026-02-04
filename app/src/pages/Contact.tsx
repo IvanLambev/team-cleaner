@@ -1,23 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import {
   Phone,
   Mail,
   MapPin,
   Clock,
-  Send,
-  CheckCircle,
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -25,18 +12,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
   const infoRef = useRef<HTMLDivElement>(null);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
 
   useEffect(() => {
     // Add Calendly script
@@ -83,16 +62,6 @@ export default function Contact() {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-    }, 3000);
-  };
-
   const contactInfo = [
     {
       icon: Phone,
@@ -118,20 +87,6 @@ export default function Contact() {
       value: t('contact.info.hours.value'),
       href: '#',
     },
-  ];
-
-  const services = [
-    { value: 'basic', label: (t('pricingpage.services.list') as string[])[0] },
-    { value: 'renovation', label: (t('pricingpage.services.list') as string[])[1] },
-    { value: 'carpet', label: (t('pricingpage.services.list') as string[])[2] },
-    { value: 'furniture', label: (t('pricingpage.services.list') as string[])[3] },
-    { value: 'windows', label: (t('pricingpage.services.list') as string[])[4] },
-    { value: 'bathroom', label: (t('pricingpage.services.list') as string[])[5] },
-    { value: 'attic', label: (t('pricingpage.services.list') as string[])[6] },
-    { value: 'subscription', label: (t('pricingpage.services.list') as string[])[7] },
-    { value: 'entrance', label: (t('pricingpage.services.list') as string[])[8] },
-    { value: 'office', label: (t('pricingpage.services.list') as string[])[9] },
-    { value: 'refresh', label: (t('pricingpage.services.list') as string[])[10] },
   ];
 
   return (
