@@ -15,7 +15,6 @@ import {
   Shield,
   Smile,
   ChevronRight,
-  Quote,
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -260,24 +259,6 @@ export default function Home() {
     },
   ];
 
-  const testimonials = [
-    {
-      name: t('testimonials.1.name'),
-      text: t('testimonials.1.text'),
-      rating: 5,
-    },
-    {
-      name: t('testimonials.2.name'),
-      text: t('testimonials.2.text'),
-      rating: 5,
-    },
-    {
-      name: t('testimonials.3.name'),
-      text: t('testimonials.3.text'),
-      rating: 5,
-    },
-  ];
-
   const pricingPlans = [
     {
       name: t('pricing.basic.title'),
@@ -470,12 +451,13 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 {t('about.title')}
               </h2>
-              <p className="text-lg text-gray-600">{t('about.desc')}</p>
+              <p className="text-lg text-gray-600">
+                Нова фирма създадена от професионалисти с дългогодишен опит в сферата на почистването
+              </p>
 
-              <div className="grid grid-cols-3 gap-6 pt-6">
+              <div className="grid grid-cols-2 gap-6 pt-6">
                 {[
-                  { value: '15+', label: t('about.stat1') },
-                  { value: '50K+', label: t('about.stat2') },
+                  { value: '500+', label: t('about.stat2') },
                   { value: '100%', label: t('about.stat3') },
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
@@ -527,37 +509,6 @@ export default function Home() {
                   </div>
                 )}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section ref={testimonialsRef} id="testimonials" className="py-20 lg:py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {t('testimonials.title')}
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="testimonial-card border-0 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <CardContent className="p-8">
-                  <Quote className="w-10 h-10 text-[#10B981]/30 mb-4" />
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>

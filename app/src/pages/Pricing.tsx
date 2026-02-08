@@ -6,7 +6,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import {
   CheckCircle,
   Sparkles,
-  Home,
   Building,
   Sofa,
   Wind,
@@ -17,7 +16,15 @@ import {
   Hammer,
   Calendar,
   ArrowRight,
+  SquareDashedBottom,
 } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -29,6 +36,7 @@ export default function Pricing() {
   const tableRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const [isMonthly, setIsMonthly] = useState(true);
+  const [selectedService, setSelectedService] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -79,26 +87,26 @@ export default function Pricing() {
   const pricingData = {
     en: {
       columns: [
-        { name: 'Studio', price: '$149', suitable: 'Apartments', time: '2 hours' },
-        { name: '1 Bedroom', price: '$159', suitable: 'Apartments', time: '2.5 hours' },
-        { name: '2 Bedroom', price: '$189', suitable: 'Apartments', time: '3 hours' },
-        { name: '3 Bedroom', price: '$249', suitable: 'Houses & Apartments', time: '3.5 hours' },
-        { name: '4 Bedroom', price: '$349', suitable: 'Houses', time: '4 hours' },
-        { name: '5 Bedroom', price: '$499', suitable: 'Houses', time: '5 hours' },
-        { name: '6 Bedroom', price: '$599', suitable: 'Houses', time: '6 hours' },
-        { name: 'Hourly Service', price: '$70/hr', suitable: 'Custom', time: '2 hours min.' },
+        { name: 'Studio', price: '€135', suitable: 'Apartments', time: '2 hours' },
+        { name: '1 Bedroom', price: '€145', suitable: 'Apartments', time: '2.5 hours' },
+        { name: '2 Bedroom', price: '€170', suitable: 'Apartments', time: '3 hours' },
+        { name: '3 Bedroom', price: '€225', suitable: 'Houses & Apartments', time: '3.5 hours' },
+        { name: '4 Bedroom', price: '€315', suitable: 'Houses', time: '4 hours' },
+        { name: '5 Bedroom', price: '€450', suitable: 'Houses', time: '5 hours' },
+        { name: '6 Bedroom', price: '€540', suitable: 'Houses', time: '6 hours' },
+        { name: 'Hourly Service', price: '€63/hr', suitable: 'Custom', time: '2 hours min.' },
       ],
     },
     bg: {
       columns: [
-        { name: 'Студио', price: '149 лв.', suitable: 'Апартаменти', time: '2 часа' },
-        { name: '1 Спалня', price: '159 лв.', suitable: 'Апартаменти', time: '2.5 часа' },
-        { name: '2 Спални', price: '189 лв.', suitable: 'Апартаменти', time: '3 часа' },
-        { name: '3 Спални', price: '249 лв.', suitable: 'Къщи и Апартаменти', time: '3.5 часа' },
-        { name: '4 Спални', price: '349 лв.', suitable: 'Къщи', time: '4 часа' },
-        { name: '5 Спални', price: '499 лв.', suitable: 'Къщи', time: '5 часа' },
-        { name: '6 Спални', price: '599 лв.', suitable: 'Къщи', time: '6 часа' },
-        { name: 'На Час', price: '70 лв./ч', suitable: 'По избор', time: 'мин. 2 часа' },
+        { name: 'Студио', price: '135 €', suitable: 'Апартаменти', time: '2 часа' },
+        { name: '1 Спалня', price: '145 €', suitable: 'Апартаменти', time: '2.5 часа' },
+        { name: '2 Спални', price: '170 €', suitable: 'Апартаменти', time: '3 часа' },
+        { name: '3 Спални', price: '225 €', suitable: 'Къщи и Апартаменти', time: '3.5 часа' },
+        { name: '4 Спални', price: '315 €', suitable: 'Къщи', time: '4 часа' },
+        { name: '5 Спални', price: '450 €', suitable: 'Къщи', time: '5 часа' },
+        { name: '6 Спални', price: '540 €', suitable: 'Къщи', time: '6 часа' },
+        { name: 'На Час', price: '63 €/ч', suitable: 'По избор', time: 'мин. 2 часа' },
       ],
     },
   };
@@ -108,8 +116,8 @@ export default function Pricing() {
   const allServices = [
     { icon: Sparkles, name: (t('pricingpage.services.list') as string[])[0] },
     { icon: Hammer, name: (t('pricingpage.services.list') as string[])[1] },
-    { icon: Sofa, name: (t('pricingpage.services.list') as string[])[2] },
-    { icon: Home, name: (t('pricingpage.services.list') as string[])[3] },
+    { icon: SquareDashedBottom, name: (t('pricingpage.services.list') as string[])[2] },
+    { icon: Sofa, name: (t('pricingpage.services.list') as string[])[3] },
     { icon: Wind, name: (t('pricingpage.services.list') as string[])[4] },
     { icon: Bath, name: (t('pricingpage.services.list') as string[])[5] },
     { icon: Warehouse, name: (t('pricingpage.services.list') as string[])[6] },
@@ -122,14 +130,14 @@ export default function Pricing() {
   const pricingPlans = [
     {
       name: t('pricing.basic.title'),
-      price: isMonthly ? t('pricing.basic.price') : (language === 'bg' ? '119 лв.' : '$119'),
+      price: isMonthly ? t('pricing.basic.price') : '€110',
       description: t('pricing.basic.desc'),
       features: [t('pricing.basic.feature1'), t('pricing.basic.feature2'), t('pricing.basic.feature3')],
       popular: false,
     },
     {
       name: t('pricing.standard.title'),
-      price: isMonthly ? t('pricing.standard.price') : (language === 'bg' ? '179 лв.' : '$179'),
+      price: isMonthly ? t('pricing.standard.price') : '€160',
       description: t('pricing.standard.desc'),
       features: [
         t('pricing.standard.feature1'),
@@ -141,7 +149,7 @@ export default function Pricing() {
     },
     {
       name: t('pricing.premium.title'),
-      price: isMonthly ? t('pricing.premium.price') : (language === 'bg' ? '299 лв.' : '$299'),
+      price: isMonthly ? t('pricing.premium.price') : '€270',
       description: t('pricing.premium.desc'),
       features: [
         t('pricing.premium.feature1'),
@@ -339,6 +347,7 @@ export default function Pricing() {
             {allServices.map((service, index) => (
               <div
                 key={index}
+                onClick={() => setSelectedService(index)}
                 className="service-item flex items-center gap-4 p-6 bg-gray-50 rounded-2xl hover:bg-[#10B981]/5 hover:shadow-md transition-all duration-300 group cursor-pointer"
               >
                 <div className="w-12 h-12 bg-[#10B981]/10 rounded-xl flex items-center justify-center group-hover:bg-[#10B981] transition-colors duration-300">
@@ -372,6 +381,75 @@ export default function Pricing() {
           </Button>
         </div>
       </section>
+
+      {/* Service Details Modal */}
+      <Dialog open={selectedService !== null} onOpenChange={() => setSelectedService(null)}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          {selectedService !== null && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                  <div className="w-12 h-12 bg-[#10B981]/10 rounded-xl flex items-center justify-center">
+                    {(() => {
+                      const ServiceIcon = allServices[selectedService].icon;
+                      return <ServiceIcon className="w-6 h-6 text-[#10B981]" />;
+                    })()}
+                  </div>
+                  {(t('pricingpage.services.list') as string[])[selectedService]}
+                </DialogTitle>
+                <DialogDescription className="text-base text-gray-600 mt-4">
+                  {(t('pricingpage.services.details') as any)[selectedService]?.description}
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="space-y-6 mt-6">
+                {/* Benefits Section */}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {t('service.modal.benefits.title')}
+                  </h3>
+                  <ul className="space-y-2">
+                    {(t('pricingpage.services.details') as any)[selectedService]?.benefits.map((benefit: string, idx: number) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#10B981] mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Equipment Section */}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {t('service.modal.equipment.title')}
+                  </h3>
+                  <p className="text-gray-700">
+                    {(t('pricingpage.services.details') as any)[selectedService]?.equipment}
+                  </p>
+                </div>
+
+                {/* Recommendation Section */}
+                <div className="bg-[#10B981]/5 p-4 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {t('service.modal.recommendation.title')}
+                  </h3>
+                  <p className="text-gray-700">
+                    {(t('pricingpage.services.details') as any)[selectedService]?.recommendation}
+                  </p>
+                </div>
+
+                {/* CTA Button */}
+                <Button
+                  asChild
+                  className="w-full bg-[#10B981] hover:bg-[#059669] text-white py-6 rounded-xl text-base font-medium"
+                >
+                  <Link to="/contact">{t('service.modal.cta')}</Link>
+                </Button>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

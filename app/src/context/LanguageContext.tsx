@@ -74,13 +74,13 @@ const translations = {
     'pricing.toggle.monthly': 'Monthly',
     'pricing.toggle.onetime': 'One-time',
     'pricing.basic.title': 'Basic',
-    'pricing.basic.price': '$99',
+    'pricing.basic.price': '€89',
     'pricing.basic.desc': 'Perfect for regular maintenance',
     'pricing.basic.feature1': '3 hours cleaning',
     'pricing.basic.feature2': '1 professional cleaner',
     'pricing.basic.feature3': 'Basic supplies included',
     'pricing.standard.title': 'Standard',
-    'pricing.standard.price': '$149',
+    'pricing.standard.price': '€135',
     'pricing.standard.desc': 'Most popular choice',
     'pricing.standard.feature1': '5 hours cleaning',
     'pricing.standard.feature2': '2 professional cleaners',
@@ -88,7 +88,7 @@ const translations = {
     'pricing.standard.feature4': 'Deep cleaning included',
     'pricing.standard.badge': 'Most Popular',
     'pricing.premium.title': 'Premium',
-    'pricing.premium.price': '$249',
+    'pricing.premium.price': '€225',
     'pricing.premium.desc': 'For complete transformation',
     'pricing.premium.feature1': '8 hours cleaning',
     'pricing.premium.feature2': '3 professional cleaners',
@@ -186,6 +186,159 @@ const translations = {
       'Cleaning of offices and warehouses',
       'Refreshing cleaning'
     ],
+
+    // Service Details for Modal
+    'pricingpage.services.details': [
+      // 0: Basic cleaning
+      {
+        description: 'Regular maintenance cleaning keeps your home fresh and tidy. Perfect for maintaining a clean living space on a regular basis.',
+        benefits: [
+          'Dusting and wiping all surfaces',
+          'Vacuuming and mopping floors',
+          'Kitchen and bathroom cleaning',
+          'Trash removal and organization',
+          'Quick turnaround time'
+        ],
+        equipment: 'We use professional vacuum cleaners, microfiber cloths, and eco-friendly cleaning solutions that are safe for your family and pets.',
+        recommendation: 'Recommended weekly or bi-weekly for maintaining a consistently clean home environment.'
+      },
+      // 1: Cleaning after renovation
+      {
+        description: 'Specialized deep cleaning service after construction or renovation work. We remove dust, debris, and construction residue to make your space move-in ready.',
+        benefits: [
+          'Complete removal of construction dust',
+          'Window and frame cleaning',
+          'Floor polishing and protection',
+          'Detailed cleaning of all surfaces',
+          'Safe disposal of construction waste'
+        ],
+        equipment: 'We use industrial-grade HEPA vacuum cleaners, professional dusting equipment, and specialized cleaning solutions for post-construction cleaning.',
+        recommendation: 'Essential service immediately after any renovation or construction work to ensure a safe, clean environment.'
+      },
+      // 2: Carpet cleaning
+      {
+        description: 'Professional deep carpet cleaning using advanced extraction methods. We remove dirt, stains, allergens, and odors from all types of carpets.',
+        benefits: [
+          'Deep extraction cleaning removes embedded dirt',
+          'Eliminates allergens and dust mites',
+          'Removes tough stains and odors',
+          'Extends carpet lifespan',
+          'Fast drying time (4-6 hours)'
+        ],
+        equipment: 'We use professional hot water extraction machines (Karcher Puzzi series) with powerful suction and eco-friendly cleaning solutions.',
+        recommendation: 'Recommended every 6-12 months, or more frequently for high-traffic areas and homes with pets or children.'
+      },
+      // 3: Washing sofas, chairs, etc.
+      {
+        description: 'Professional upholstery cleaning for sofas, chairs, and other fabric furniture. Deep cleaning that refreshes and sanitizes your furniture.',
+        benefits: [
+          'Removes bacteria and allergens',
+          'Eliminates odors and refreshes fabric',
+          'Removes stains and discoloration',
+          'Extends furniture lifespan',
+          'Safe for all fabric types'
+        ],
+        equipment: 'We use professional upholstery cleaning machines with adjustable pressure, specialized attachments, and fabric-safe cleaning solutions.',
+        recommendation: 'Recommended monthly or every 3-6 months. Regular cleaning is beneficial even if furniture appears clean, as it removes invisible bacteria and allergens that accumulate over time.'
+      },
+      // 4: Window washing
+      {
+        description: 'Streak-free window cleaning inside and out. We clean glass, frames, and sills for crystal-clear windows.',
+        benefits: [
+          'Streak-free shine on all windows',
+          'Cleaning of frames and sills',
+          'Removal of stubborn stains and marks',
+          'Enhanced natural light',
+          'Professional results'
+        ],
+        equipment: 'We use professional squeegees, extension poles for hard-to-reach windows, and streak-free cleaning solutions.',
+        recommendation: 'Recommended seasonally (4 times per year) or at least twice a year for optimal clarity and light transmission.'
+      },
+      // 5: Bathroom cleaning
+      {
+        description: 'Thorough bathroom sanitization and cleaning. We target germs, mold, and soap scum for a hygienic, sparkling bathroom.',
+        benefits: [
+          'Complete sanitization and disinfection',
+          'Removal of mold and mildew',
+          'Descaling of fixtures and tiles',
+          'Grout cleaning and brightening',
+          'Odor elimination'
+        ],
+        equipment: 'We use specialized bathroom cleaners, descaling solutions, grout brushes, and disinfectants that kill 99.9% of bacteria.',
+        recommendation: 'Deep cleaning recommended monthly, with regular maintenance cleaning weekly for optimal hygiene.'
+      },
+      // 6: Cleaning of attics and ceilings
+      {
+        description: 'Specialized cleaning for attics, basements, and storage areas. We remove dust, cobwebs, and organize cluttered spaces.',
+        benefits: [
+          'Removal of dust and cobwebs',
+          'Organization of stored items',
+          'Pest control preparation',
+          'Improved air quality',
+          'Space optimization'
+        ],
+        equipment: 'We use extension tools for high ceilings, industrial vacuums, and protective gear for safe cleaning in storage areas.',
+        recommendation: 'Recommended seasonally or at least twice a year to maintain cleanliness and prevent pest issues.'
+      },
+      // 7: Subscription cleaning
+      {
+        description: 'Regular scheduled cleaning service with flexible plans. Enjoy a consistently clean home with our subscription service.',
+        benefits: [
+          'Guaranteed regular cleaning schedule',
+          'Priority booking and pricing',
+          'Same trusted cleaner each visit',
+          'Flexible plan adjustments',
+          'Cost savings with subscription'
+        ],
+        equipment: 'Full professional cleaning equipment and supplies included for all scheduled visits.',
+        recommendation: 'Perfect for busy households. Choose weekly, bi-weekly, or monthly plans based on your needs.'
+      },
+      // 8: Entrance cleaning
+      {
+        description: 'Specialized cleaning of building entrances, lobbies, and common areas. Create a welcoming first impression.',
+        benefits: [
+          'Professional appearance',
+          'Floor cleaning and polishing',
+          'Glass door cleaning',
+          'Dust and debris removal',
+          'Welcoming environment'
+        ],
+        equipment: 'We use commercial floor cleaning machines, glass cleaning tools, and high-traffic area cleaning solutions.',
+        recommendation: 'Recommended weekly for residential buildings, or daily for commercial properties with high foot traffic.'
+      },
+      // 9: Cleaning of offices and warehouses
+      {
+        description: 'Professional commercial cleaning for offices, warehouses, and business facilities. Maintain a productive and professional workspace.',
+        benefits: [
+          'Comprehensive workspace cleaning',
+          'Sanitization of high-touch areas',
+          'Floor maintenance',
+          'Trash removal and recycling',
+          'Flexible scheduling (after-hours available)'
+        ],
+        equipment: 'We use commercial-grade cleaning equipment, industrial vacuums, and professional disinfectants suitable for business environments.',
+        recommendation: 'Daily cleaning for offices, weekly or bi-weekly for warehouses, depending on usage and traffic.'
+      },
+      // 10: Refreshing cleaning
+      {
+        description: 'Quick refresh cleaning service between deep cleans. Perfect for maintaining cleanliness and tidiness.',
+        benefits: [
+          'Fast and efficient service',
+          'Focus on high-traffic areas',
+          'Surface cleaning and dusting',
+          'Kitchen and bathroom refresh',
+          'Ideal maintenance between deep cleans'
+        ],
+        equipment: 'We use efficient cleaning tools and quick-drying solutions for rapid turnaround.',
+        recommendation: 'Perfect between regular deep cleaning sessions, or as a weekly maintenance service.'
+      }
+    ],
+
+    // Service Modal Labels
+    'service.modal.benefits.title': 'What\'s Included',
+    'service.modal.equipment.title': 'Professional Equipment',
+    'service.modal.recommendation.title': 'Our Recommendation',
+    'service.modal.cta': 'Book This Service',
 
     // Table headers
     'table.studio': 'Studio',
@@ -296,13 +449,13 @@ const translations = {
     'pricing.toggle.monthly': 'Месечно',
     'pricing.toggle.onetime': 'Еднократно',
     'pricing.basic.title': 'Основен',
-    'pricing.basic.price': '99 лв.',
+    'pricing.basic.price': '89 €',
     'pricing.basic.desc': 'Идеален за редовна поддръжка',
     'pricing.basic.feature1': '3 часа почистване',
     'pricing.basic.feature2': '1 професионален чистач',
     'pricing.basic.feature3': 'Основни консумативи',
     'pricing.standard.title': 'Стандартен',
-    'pricing.standard.price': '149 лв.',
+    'pricing.standard.price': '135 €',
     'pricing.standard.desc': 'Най-популярен избор',
     'pricing.standard.feature1': '5 часа почистване',
     'pricing.standard.feature2': '2 професионални чистача',
@@ -310,7 +463,7 @@ const translations = {
     'pricing.standard.feature4': 'Дълбоко почистване',
     'pricing.standard.badge': 'Най-Популярен',
     'pricing.premium.title': 'Премиум',
-    'pricing.premium.price': '249 лв.',
+    'pricing.premium.price': '225 €',
     'pricing.premium.desc': 'За пълна трансформация',
     'pricing.premium.feature1': '8 часа почистване',
     'pricing.premium.feature2': '3 професионални чистача',
@@ -410,6 +563,159 @@ const translations = {
       'Почистване на офиси и складове',
       'Освежаващо почистване'
     ],
+
+    // Детайли на услугите за модала
+    'pricingpage.services.details': [
+      // 0: Основно почистване
+      {
+        description: 'Редовно поддържащо почистване, което поддържа дома ви свеж и подреден. Перфектно за поддържане на чисто жилищно пространство редовно.',
+        benefits: [
+          'Изтриване на прах от всички повърхности',
+          'Прахосмукане и миене на подове',
+          'Почистване на кухня и баня',
+          'Изхвърляне на боклук и организация',
+          'Бързо изпълнение'
+        ],
+        equipment: 'Използваме професионални прахосмукачки, микрофибърни кърпи и екологични почистващи препарати, които са безопасни за вашето семейство и домашни любимци.',
+        recommendation: 'Препоръчваме седмично или два пъти седмично за поддържане на постоянно чиста домашна среда.'
+      },
+      // 1: Почистване след ремонт
+      {
+        description: 'Специализирана услуга за дълбоко почистване след строителни или ремонтни работи. Премахваме прах, отломки и строителни остатъци, за да направим пространството ви готово за нанасяне.',
+        benefits: [
+          'Пълно премахване на строителен прах',
+          'Почистване на прозорци и рамки',
+          'Полиране и защита на подове',
+          'Детайлно почистване на всички повърхности',
+          'Безопасно изхвърляне на строителни отпадъци'
+        ],
+        equipment: 'Използваме индустриални HEPA прахосмукачки, професионално оборудване за изтриване на прах и специализирани почистващи препарати за почистване след строителство.',
+        recommendation: 'Задължителна услуга веднага след всякакви ремонтни или строителни работи, за да осигурим безопасна и чиста среда.'
+      },
+      // 2: Почистване на килими
+      {
+        description: 'Професионално дълбоко почистване на килими с модерни екстракционни методи. Премахваме мръсотия, петна, алергени и миризми от всички видове килими.',
+        benefits: [
+          'Дълбоко екстракционно почистване премахва вкоренената мръсотия',
+          'Елиминира алергени и акари',
+          'Премахва упорити петна и миризми',
+          'Удължава живота на килима',
+          'Бързо изсъхване (4-6 часа)'
+        ],
+        equipment: 'Използваме професионални машини за почистване с гореща вода (серия Karcher Puzzi) с мощна смукателна сила и екологични почистващи препарати.',
+        recommendation: 'Препоръчваме на всеки 6-12 месеца, или по-често за зони с голям трафик и домове с домашни любимци или деца.'
+      },
+      // 3: Изпиране на дивани, столове и др.
+      {
+        description: 'Професионално почистване на тапицерия за дивани, столове и други текстилни мебели. Дълбоко почистване, което освежава и дезинфекцира мебелите ви.',
+        benefits: [
+          'Премахва бактерии и алергени',
+          'Елиминира миризми и освежава тъканта',
+          'Премахва петна и обезцветявания',
+          'Удължава живота на мебелите',
+          'Безопасно за всички видове тъкани'
+        ],
+        equipment: 'Използваме професионални машини за почистване на тапицерия с регулируемо налягане, специализирани приставки и препарати безопасни за тъканите.',
+        recommendation: 'Препоръчваме месечно или на всеки 3-6 месеца. Редовното почистване е полезно, дори ако мебелите изглеждат чисти, тъй като премахва невидими бактерии и алергени, които се натрупват с времето.'
+      },
+      // 4: Измиване на прозорци
+      {
+        description: 'Почистване на прозорци без следи отвътре и отвън. Почистваме стъкла, рамки и первази за кристално чисти прозорци.',
+        benefits: [
+          'Блясък без следи на всички прозорци',
+          'Почистване на рамки и первази',
+          'Премахване на упорити петна и следи',
+          'Подобрена естествена светлина',
+          'Професионални резултати'
+        ],
+        equipment: 'Използваме професионални стъргала, телескопични дръжки за труднодостъпни прозорци и препарати без следи.',
+        recommendation: 'Препоръчваме сезонно (4 пъти годишно) или поне два пъти годишно за оптимална яснота и пропускане на светлина.'
+      },
+      // 5: Почистване на бани
+      {
+        description: 'Задълбочена дезинфекция и почистване на баня. Насочваме се към микроби, мухъл и водна кал за хигиенична, блестяща баня.',
+        benefits: [
+          'Пълна дезинфекция и санитизация',
+          'Премахване на мухъл и плесен',
+          'Почистване на варовик от арматури и плочки',
+          'Почистване и освежаване на фуги',
+          'Елиминиране на миризми'
+        ],
+        equipment: 'Използваме специализирани препарати за бани, разтвори за премахване на варовик, четки за фуги и дезинфектанти, които убиват 99.9% от бактериите.',
+        recommendation: 'Дълбоко почистване препоръчваме месечно, с редовно поддържащо почистване седмично за оптимална хигиена.'
+      },
+      // 6: Почистване на тавани и мазета
+      {
+        description: 'Специализирано почистване на тавани, мазета и складови помещения. Премахваме прах, паяжини и организираме претъпкани пространства.',
+        benefits: [
+          'Премахване на прах и паяжини',
+          'Организация на съхранявани вещи',
+          'Подготовка за борба с вредители',
+          'Подобрено качество на въздуха',
+          'Оптимизация на пространството'
+        ],
+        equipment: 'Използваме инструменти с дълги дръжки за високи тавани, индустриални прахосмукачки и защитна екипировка за безопасно почистване в складови помещения.',
+        recommendation: 'Препоръчваме сезонно или поне два пъти годишно за поддържане на чистота и предотвратяване на проблеми с вредители.'
+      },
+      // 7: Абонаментно почистване
+      {
+        description: 'Редовна планирана услуга по почистване с гъвкави планове. Насладете се на постоянно чист дом с нашата абонаментна услуга.',
+        benefits: [
+          'Гарантиран редовен график за почистване',
+          'Приоритетно резервиране и цени',
+          'Същият доверен чистач при всяко посещение',
+          'Гъвкави корекции на плана',
+          'Икономия на разходи с абонамент'
+        ],
+        equipment: 'Пълно професионално почистващо оборудване и консумативи включени за всички планирани посещения.',
+        recommendation: 'Перфектно за натоварени домакинства. Изберете седмични, двуседмични или месечни планове според вашите нужди.'
+      },
+      // 8: Почистване на входове
+      {
+        description: 'Специализирано почистване на входове на сгради, вестибюли и общи части. Създайте добро първо впечатление.',
+        benefits: [
+          'Професионален външен вид',
+          'Почистване и полиране на подове',
+          'Почистване на стъклени врати',
+          'Премахване на прах и отломки',
+          'Приветлива среда'
+        ],
+        equipment: 'Използваме търговски машини за почистване на подове, инструменти за почистване на стъкло и решения за почистване на зони с голям трафик.',
+        recommendation: 'Препоръчваме седмично за жилищни сгради или ежедневно за търговски обекти с голям пешеходен трафик.'
+      },
+      // 9: Почистване на офиси и складове
+      {
+        description: 'Професионално търговско почистване на офиси, складове и бизнес обекти. Поддържайте продуктивно и професионално работно пространство.',
+        benefits: [
+          'Цялостно почистване на работното пространство',
+          'Дезинфекция на често докосвани зони',
+          'Поддръжка на подове',
+          'Изхвърляне на боклук и рециклиране',
+          'Гъвкав график (наличен извън работно време)'
+        ],
+        equipment: 'Използваме почистващо оборудване от търговски клас, индустриални прахосмукачки и професионални дезинфектанти подходящи за бизнес среди.',
+        recommendation: 'Ежедневно почистване за офиси, седмично или двуседмично за складове, в зависимост от използването и трафика.'
+      },
+      // 10: Освежаващо почистване
+      {
+        description: 'Бърза освежаваща услуга по почистване между дълбоките почиствания. Перфектна за поддържане на чистота и ред.',
+        benefits: [
+          'Бърза и ефективна услуга',
+          'Фокус върху зони с голям трафик',
+          'Повърхностно почистване и изтриване на прах',
+          'Освежаване на кухня и баня',
+          'Идеална поддръжка между дълбоките почиствания'
+        ],
+        equipment: 'Използваме ефективни инструменти за почистване и бързосъхнещи препарати за бърз резултат.',
+        recommendation: 'Перфектна между редовните дълбоки почиствания или като седмична поддържаща услуга.'
+      }
+    ],
+
+    // Етикети за модала на услугите
+    'service.modal.benefits.title': 'Какво е включено',
+    'service.modal.equipment.title': 'Професионално оборудване',
+    'service.modal.recommendation.title': 'Нашата препоръка',
+    'service.modal.cta': 'Резервирай тази услуга',
 
     // Table headers
     'table.studio': 'Студио',
