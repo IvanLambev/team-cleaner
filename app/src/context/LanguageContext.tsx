@@ -96,6 +96,7 @@ const translations = {
     'pricing.premium.feature4': 'Deep cleaning included',
     'pricing.premium.feature5': 'Organization service',
     'pricing.cta': 'Get Started',
+    'pricing.viewAllServices': 'View All Services',
 
     // FAQ
     'faq.title': 'Frequently Asked Questions',
@@ -471,6 +472,7 @@ const translations = {
     'pricing.premium.feature4': 'Дълбоко почистване',
     'pricing.premium.feature5': 'Организация',
     'pricing.cta': 'Започнете',
+    'pricing.viewAllServices': 'Вижте Всички Услуги',
 
     // FAQ
     'faq.title': 'Често Задавани Въпроси',

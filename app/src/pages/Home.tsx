@@ -567,6 +567,17 @@ export default function Home() {
               </Card>
             ))}
           </div>
+          
+          {/* View All Services Link */}
+          <div className="text-center mt-12">
+            <Link 
+              to="/pricing"
+              className="inline-flex items-center gap-2 text-[#10B981] hover:text-[#059669] font-semibold text-lg transition-all duration-300 group"
+            >
+              {t('pricing.viewAllServices')}
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
 

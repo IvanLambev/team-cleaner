@@ -384,7 +384,7 @@ export default function Pricing() {
 
       {/* Service Details Modal */}
       <Dialog open={selectedService !== null} onOpenChange={() => setSelectedService(null)}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
           {selectedService !== null && (
             <>
               <DialogHeader>
