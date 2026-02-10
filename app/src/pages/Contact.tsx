@@ -119,7 +119,7 @@ export default function Contact() {
               <div className="calendly-container bg-white rounded-3xl shadow-xl overflow-hidden min-h-[700px]">
                 <div
                   className="calendly-inline-widget"
-                  data-url="https://calendly.com/bookmindr/meet-with-me?hide_event_type_details=1&hide_gdpr_banner=1"
+                  data-url="https://calendly.com/teamcleaner-info/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=10b981"
                   style={{ minWidth: '320px', height: '700px' }}
                 />
               </div>
