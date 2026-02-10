@@ -1,0 +1,6 @@
+# robots.txt for Team Cleaner
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
