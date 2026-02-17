@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from '@/context/LanguageContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Home from '@/pages/Home';
-import OfficeCleaning from '@/pages/OfficeCleaning';
-import Pricing from '@/pages/Pricing';
-import Contact from '@/pages/Contact';
+
+const Home = lazy(() => import('@/pages/Home'));
+const OfficeCleaning = lazy(() => import('@/pages/OfficeCleaning'));
+const Pricing = lazy(() => import('@/pages/Pricing'));
+const Contact = lazy(() => import('@/pages/Contact'));
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -35,12 +36,14 @@ function App() {
         <div className="min-h-screen bg-white">
           <Navbar />
           <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/office-cleaning" element={<OfficeCleaning />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
+            <Suspense fallback={<div className="py-24 text-center text-gray-600">Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/office-cleaning" element={<OfficeCleaning />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </Suspense>
           </main>
           <Footer />
         </div>

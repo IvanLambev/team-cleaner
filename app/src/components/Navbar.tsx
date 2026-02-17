@@ -46,7 +46,12 @@ export default function Navbar() {
             <img
               src="/team-cleaner-logo.jpg"
               alt="Team Cleaner Logo"
+              width={160}
+              height={40}
               className="h-10 w-auto rounded-md shadow-sm"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
             <span className={`font-bold text-xl ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
               Team Cleaner
@@ -88,8 +93,10 @@ export default function Navbar() {
 
             {/* Language Toggle */}
             <button
+              type="button"
               onClick={toggleLanguage}
               className="relative flex items-center gap-1 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              aria-label={language === 'en' ? 'Switch language to Bulgarian' : 'Switch language to English'}
             >
               <span
                 className={`text-sm font-medium transition-colors ${language === 'en' ? 'text-[#10B981]' : 'text-gray-500'
@@ -121,8 +128,12 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6 text-gray-700" />
@@ -134,6 +145,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
+          id="mobile-menu"
           className={`lg:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 mt-4' : 'max-h-0'
             }`}
         >
@@ -155,8 +167,10 @@ export default function Navbar() {
             <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
               {/* Language Toggle Mobile */}
               <button
+                type="button"
                 onClick={toggleLanguage}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100"
+                aria-label={language === 'en' ? 'Switch language to Bulgarian' : 'Switch language to English'}
               >
                 <span className={language === 'en' ? 'text-[#10B981] font-medium' : 'text-gray-500'}>
                   EN

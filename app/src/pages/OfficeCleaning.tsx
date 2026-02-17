@@ -180,7 +180,12 @@ export default function OfficeCleaning() {
               <img
                 src="/office-cleaning.jpg"
                 alt="Office cleaning"
+                width={960}
+                height={720}
                 className="rounded-3xl shadow-2xl w-full object-cover"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
           </div>
@@ -252,7 +257,11 @@ export default function OfficeCleaning() {
               <img
                 src="/process-cleaner.jpg"
                 alt="Professional cleaner"
+                width={960}
+                height={1200}
                 className="rounded-3xl shadow-2xl w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6">
                 <div className="flex items-center gap-4">
@@ -302,7 +311,7 @@ export default function OfficeCleaning() {
                 <h3 className="text-2xl font-bold text-white mb-4">
                   {t('office.ready.title')}
                 </h3>
-                <p className="text-white/80 mb-6">
+                <p className="text-white mb-6">
                   {t('office.ready.desc')}
                 </p>
                 <Button

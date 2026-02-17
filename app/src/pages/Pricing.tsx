@@ -276,8 +276,11 @@ export default function Pricing() {
                 {t('pricing.toggle.monthly')}
               </span>
               <button
+                type="button"
                 onClick={() => setIsMonthly(!isMonthly)}
                 className="relative w-14 h-7 bg-[#10B981] rounded-full transition-colors"
+                aria-label={isMonthly ? 'Switch to one-time pricing' : 'Switch to monthly pricing'}
+                aria-pressed={!isMonthly}
               >
                 <span
                   className={`absolute top-1 w-5 h-5 bg-white rounded-full transition-transform duration-300 ${isMonthly ? 'left-1' : 'left-8'
@@ -345,10 +348,12 @@ export default function Pricing() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {allServices.map((service, index) => (
-              <div
+              <button
                 key={index}
+                type="button"
                 onClick={() => setSelectedService(index)}
                 className="service-item flex items-center gap-4 p-6 bg-gray-50 rounded-2xl hover:bg-[#10B981]/5 hover:shadow-md transition-all duration-300 group cursor-pointer"
+                aria-label={`Open details for ${service.name}`}
               >
                 <div className="w-12 h-12 bg-[#10B981]/10 rounded-xl flex items-center justify-center group-hover:bg-[#10B981] transition-colors duration-300">
                   <service.icon className="w-6 h-6 text-[#10B981] group-hover:text-white transition-colors duration-300" />
@@ -357,7 +362,7 @@ export default function Pricing() {
                   {service.name}
                 </span>
                 <ArrowRight className="w-5 h-5 text-gray-400 ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -369,7 +374,7 @@ export default function Pricing() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t('pricingpage.custom.title')}
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-lg text-white mb-8">
             {t('pricingpage.custom.desc')}
           </p>
           <Button

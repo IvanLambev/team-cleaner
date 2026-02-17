@@ -382,7 +382,12 @@ export default function Home() {
                 <img
                   src="/hero-cleaners.jpg"
                   alt="Professional cleaners"
+                  width={768}
+                  height={960}
                   className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                 />
                 {/* Floating badge */}
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
@@ -439,7 +444,11 @@ export default function Home() {
               <img
                 src="/about-cleaners.jpg"
                 alt="About our team"
+                width={960}
+                height={720}
                 className="rounded-3xl shadow-2xl w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[#10B981]/10 rounded-full blur-2xl" />
             </div>
@@ -589,7 +598,11 @@ export default function Home() {
               <img
                 src="/faq-cleaner.jpg"
                 alt="FAQ"
+                width={960}
+                height={1280}
                 className="rounded-3xl shadow-2xl w-full object-cover sticky top-24"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -626,7 +639,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t('office.cta.title')}
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-lg text-white mb-8">
             {t('office.cta.subtitle')}
           </p>
           <Button

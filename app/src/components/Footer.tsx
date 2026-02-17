@@ -32,7 +32,11 @@ export default function Footer() {
               <img
                 src="/team-cleaner-logo.jpg"
                 alt="Team Cleaner Logo"
+                width={160}
+                height={40}
                 className="h-10 w-auto rounded-lg shadow-sm"
+                loading="lazy"
+                decoding="async"
               />
               <span className="font-bold text-xl text-white">Team Cleaner</span>
             </Link>
@@ -44,7 +48,7 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">{t('footer.column.services')}</h4>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.column.services')}</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link, index) => (
                 <li key={index}>
@@ -62,7 +66,7 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">{t('footer.column.company')}</h4>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.column.company')}</h3>
             <ul className="space-y-3">
               {companyLinks.map((link, index) => (
                 <li key={index}>
@@ -80,7 +84,7 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">{t('footer.column.support')}</h4>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.column.support')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#10B981] mt-0.5" />
